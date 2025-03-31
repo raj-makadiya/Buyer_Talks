@@ -12923,7 +12923,7 @@ textarea.form-control-lg {
 
 .app-wrapper {
   position: relative;
-  display: grid;
+  display: grid; 
   grid-template-areas: "lte-app-sidebar lte-app-header" "lte-app-sidebar lte-app-main" "lte-app-sidebar lte-app-footer";
   grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;

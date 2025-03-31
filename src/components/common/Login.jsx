@@ -23,18 +23,38 @@ export const Login = () => {
   const navigate = useNavigate();
 
  
-  const submitHandler = async(data) => {
-    setisLoading(true)
-   
-    const res = await axios.post("/user/login", data)
-    setisLoading(false)
-    console.log(res.data)
-    if(res.status === 200){
-      
-      localStorage.setItem("id",res.data.data._id)
-      localStorage.setItem("role",res.data.data.roleId.name)
-      toast.success('login successfully',{
-        position: "top-left",
+  const submitHandler = async (data) => {
+    try {
+      const res = await axios.post("/user/login", data);
+      console.log(res.data);
+
+      if (res.status === 200) {
+        
+        // alert("login successfully")
+        toast.success('Login Successfully', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+          });
+        localStorage.setItem("id", res.data.data._id);
+        localStorage.setItem("role", res.data.data.roleId.name);
+
+        if (res.data.data.roleId.name === "user") {
+          setTimeout(() => {
+            navigate("/user");
+          }, 2500);
+        }
+      }
+    } catch (error) {
+      // alert("Login failed");
+      toast.error('  Invalid Credentials !!', {
+        position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: false,
@@ -44,27 +64,10 @@ export const Login = () => {
         theme: "dark",
         transition: Bounce,
         });
-
-        if(res.data.data.roleId.name === "user"){
-          setTimeout(()=>{navigate("/user")},2500)
-          
-        }
-      }
-      else{
-        alert("Login Failed")
-        toast.error('login failed',{
-                      position: "top-left",
-                      autoClose: 5000,
-                      hideProgressBar: false,
-                      closeOnClick: false,
-                      pauseOnHover: true,
-                      draggable: true,
-                      progress: undefined,
-                      theme: "dark",
-                      transition: Bounce,
-                      });
-      }
+        
     }
+  };
+
 
   const ValidationSchema = {
     emailValidator: {
@@ -139,7 +142,7 @@ export const Login = () => {
           </Form.Group>
 
           <div className="text-center my-2">
-            <Link to="/error">Forgot password?</Link>
+            <Link to="/forgotpassword">Forgot password?</Link>
           </div>
 
           {/* Submit Button */}
@@ -152,22 +155,7 @@ export const Login = () => {
           Don't have an account? <Link to="/signup">Register here</Link>
         </p>
 
-        {/* Social Media Buttons */}
-        <div className="text-center mt-3">
-          <p>or sign up with:</p>
-          <div className="d-flex justify-content-center gap-2">
-            {[
-              { name: "Facebook", icon: "fa-facebook-f", color: "#1877f2" },
-              { name: "Twitter", icon: "fa-twitter", color: "#1da1f2" },
-              { name: "Google", icon: "fa-google", color: "#db4437" },
-              { name: "GitHub", icon: "fa-github", color: "#333" },
-            ].map(({ name, icon, color }) => (
-              <Button key={name} variant="light" className="p-2 border" style={{ color }}>
-                <i className={`fab ${icon}`}></i>
-              </Button>
-            ))}
-          </div>
-        </div>
+       
       </Card.Body>
     </Card>
   </Container>

@@ -1,0 +1,132 @@
+.table-container {
+  width: 100%;
+  margin: 20px auto;
+  overflow-x: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Table Styling */
+.complaint-table {
+  width: 100%;
+  min-width: 800px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Header Styling */
+thead {
+  background: #343a40;
+  color: white;
+}
+
+th, td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Complaint Description Styling */
+.description-cell {
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.description-content {
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+/* Row Styling */
+tr:nth-child(even) {
+  background: #f1f1f1;
+}
+
+tr:hover {
+  background: rgba(0, 123, 255, 0.1);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Stylish Product Images */
+.product-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 3px solid #dee2e6;
+  transition: transform 0.3s;
+}
+
+.product-img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Design for Tablets and Smaller Screens */
+@media (max-width: 1199px) {
+  .table-container {
+    padding: 10px;
+  }
+  th, td {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .product-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .complaint-table {
+    min-width: 600px;
+    overflow-x: auto;
+  }
+  th, td {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .product-img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    overflow-x: auto;
+  }
+  .complaint-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  th, td {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .product-img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  th, td {
+    font-size: 10px;
+    padding: 6px;
+  }
+  .product-img {
+    width: 50px;
+    height: 50px;
+  }
+}

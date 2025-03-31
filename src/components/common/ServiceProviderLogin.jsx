@@ -92,6 +92,11 @@ export const ServiceProviderLogin = () => {
   };
 
   return (
+    <>
+    <ToastContainer
+                      position="top-center" autoClose={5000} theme="dark" transition={Bounce}
+                    />
+   {isLoading==true && <CustomLoader/>}
     <Container
     fluid
     className="d-flex align-items-center justify-content-center min-vh-100"
@@ -102,20 +107,7 @@ export const ServiceProviderLogin = () => {
       backgroundPosition: "center",
     }}
   >
-   <ToastContainer
-                      position="top-left"
-                      autoClose={100}
-                      hideProgressBar={false}
-                      newestOnTop={false}
-                      closeOnClick={false}
-                      rtl={false}
-                      pauseOnFocusLoss
-                      draggable
-                      pauseOnHover
-                      theme="dark"
-                      transition={Bounce}
-                    />
-   {isLoading==true && <CustomLoader/>}
+   
     <Card className="p-4 shadow-lg" style={{ maxWidth: "400px", width: "100%" }}>
       <Card.Body>
         <h2 className="text-uppercase text-center mb-4">Sign In</h2>
@@ -141,7 +133,7 @@ export const ServiceProviderLogin = () => {
           </Form.Group>
 
           <div className="text-center my-2">
-            <Link to="/error">Forgot password?</Link>
+            <Link to="/serviceForgotPassword">Forgot password?</Link>
           </div>
 
           {/* Submit Button */}
@@ -154,25 +146,11 @@ export const ServiceProviderLogin = () => {
           Don't have an account? <Link to="/service/signup">Register here</Link>
         </p>
 
-        {/* Social Media Buttons */}
-        <div className="text-center mt-3">
-          <p>or sign up with:</p>
-          <div className="d-flex justify-content-center gap-2">
-            {[
-              { name: "Facebook", icon: "fa-facebook-f", color: "#1877f2" },
-              { name: "Twitter", icon: "fa-twitter", color: "#1da1f2" },
-              { name: "Google", icon: "fa-google", color: "#db4437" },
-              { name: "GitHub", icon: "fa-github", color: "#333" },
-            ].map(({ name, icon, color }) => (
-              <Button key={name} variant="light" className="p-2 border" style={{ color }}>
-                <i className={`fab ${icon}`}></i>
-              </Button>
-            ))}
-          </div>
-        </div>
+        
       </Card.Body>
     </Card>
   </Container>
+  </>
 );
 };
   

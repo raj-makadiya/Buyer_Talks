@@ -62,7 +62,7 @@ export const Products2 = () => {
         transition: Bounce,
         });
 
-      setTimeout(()=>{navigate("/product/products")},2500)
+      setTimeout(()=>{navigate("/product/viewmyproducts")},2500)
 
 }
 
@@ -181,11 +181,11 @@ else{
               <Form.Text className="text-danger">{errors.brand?.message}</Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-2">
+            {/* <Form.Group className="mb-2">
               <Form.Label>Product Rating</Form.Label>
               <Form.Control type="number" {...register("rating", ValidationSchema.ratingValidator)} />
               <Form.Text className="text-danger">{errors.rating?.message}</Form.Text>
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group className="mb-2">
               <Form.Label>Product Price</Form.Label>

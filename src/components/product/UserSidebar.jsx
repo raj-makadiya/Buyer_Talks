@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { UserNavbar } from "./UserNavbar";
+import { UserNavbar } from "../layouts/UserNavbar";
 import { Link, Outlet } from "react-router-dom";
 
 export const UserSidebar = () => {
@@ -20,13 +20,8 @@ export const UserSidebar = () => {
         >
         <div className="sidebar-brand">
           <a href="./index.html" className="brand-link">
-            <img
-              src="../../dist/assets/img/AdminLTELogo.png"
-              alt="AdminLTE Logo"
-              className="brand-image opacity-75 shadow"
-            />
-
-            <span className="brand-text fw-light">AdminLTE 4</span>
+            
+            <span className="brand-text fw-light">BuyerTalk</span>
           </a>
         </div>
 
@@ -53,25 +48,43 @@ export const UserSidebar = () => {
               data-accordion="false"
             >
               <li className="nav-item menu-open">
-                <Link to="/product/products2" className="nav-link active">
+                <Link to="/addcomplaint" className="nav-link active">
                   <i className="nav-icon bi bi-speedometer" />
                   <p>
-                    ADD PRODUCT
+                    ADD COMPLAINT
                     <i className="nav-arrow bi bi-chevron-right" />
                   </p>
                 </Link>
                 <ul className="nav nav-treeview">
                   <li className="nav-item">
-                    <a href="./index.html" className="nav-link active">
+                    <Link to="/viewallcomplaints" className="nav-link active">
                       <i className="nav-icon bi bi-circle" />
-                      <p>Dashboard v1</p>
-                    </a>
+                      <p>VIEW ALL COMPLAINTS</p>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a href="./index2.html" className="nav-link">
+                    <Link to="/viewmycomplaints" className="nav-link">
                       <i className="nav-icon bi bi-circle" />
-                      <p>Dashboard v2</p>
-                    </a>
+                      <p>VIEW MY COMPLAINTS</p>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/addreviewandrating" className="nav-link">
+                      <i className="nav-icon bi bi-circle" />
+                      <p>ADD REVIEW</p>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/viewmyreviewandrating" className="nav-link">
+                      <i className="nav-icon bi bi-circle" />
+                      <p>VIEW MY REVIEW</p>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/viewallreviewandratings" className="nav-link">
+                      <i className="nav-icon bi bi-circle" />
+                      <p>VIEW ALL REVIEWS</p>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <a href="./index3.html" className="nav-link">

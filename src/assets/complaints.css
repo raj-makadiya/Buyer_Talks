@@ -1,0 +1,144 @@
+.table-container {
+    width: 100%;
+    margin: 20px auto;
+    overflow-x: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Table Styling */
+  .complaint-table {
+    width: 100%;
+    min-width: 900px;
+    table-layout: auto;
+    border-collapse: collapse;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  /* Header Styling */
+  thead {
+    background: #343a40;
+    color: white;
+  }
+  
+  th, td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Column Width Adjustments */
+  th:nth-child(1), td:nth-child(1) { width: 25%; }
+  th:nth-child(2), td:nth-child(2) { width: 10%; }
+  th:nth-child(3), td:nth-child(3) { width: 12%; }
+  th:nth-child(4), td:nth-child(4) { width: 12%; }
+  th:nth-child(5), td:nth-child(5) { width: 10%; }
+  th:nth-child(6), td:nth-child(6) { width: 10%; }
+  th:nth-child(7), td:nth-child(7) { width: 16%; }
+  th:nth-child(8), td:nth-child(8) { width: 10%; }
+  
+  /* Complaint Description Styling */
+  .description-cell {
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  .description-content {
+    max-width: 100%;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.5;
+  }
+  
+  /* Row Styling */
+  tr:nth-child(even) {
+    background: #f1f1f1;
+  }
+  
+  tr:hover {
+    background: rgba(0, 123, 255, 0.1);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  /* Stylish Product Images */
+  .product-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #dee2e6;
+    transition: transform 0.3s;
+  }
+  
+  .product-img:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Responsive Adjustments for Mobile Screens */
+  @media (max-width: 934px) {
+    .complaint-table {
+      min-width: 100%;
+    }
+    th, td {
+      font-size: 14px;
+      padding: 10px;
+    }
+    .product-img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    th, td {
+      font-size: 12px;
+      padding: 8px;
+    }
+    .product-img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .complaint-table {
+      min-width: 800px;
+    }
+    th, td {
+      font-size: 11px;
+      padding: 6px;
+    }
+    .product-img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    th, td {
+      font-size: 10px;
+      padding: 5px;
+    }
+    .product-img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    th, td {
+      font-size: 9px;
+      padding: 4px;
+    }
+    .product-img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
